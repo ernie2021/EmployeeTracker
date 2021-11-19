@@ -1,6 +1,4 @@
-//inquirer
 const inquirer = require("inquirer");
-//AddADepartment
 const addADepartment = require("../library/section");
 
 const questions = [
@@ -17,5 +15,4 @@ function addSectionOptions () {
         addSections(data.newSection);
     })
 };
-//exporting the addDepartmentMenu function
 module.exports = addSectionOptions;

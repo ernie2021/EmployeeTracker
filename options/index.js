@@ -1,19 +1,10 @@
-//this will be the index menu
-//inquirer
 const inquirer = require("inquirer");
-//addDepartmentMenu
 const sectionOptions = require("./departmentoptions");
-//addEmployeeMenu
 const employeeOptions = require("./employeeoptions");
-//AddRoleMenu
 const addPositionOptions = require("./positionoptions");
-//viewAllDepartments
 const allSections = require("../library/allSections");
-//viewAllRoles
 const allPositions = require("../library/allPositions");
-//viewAllEmployees
 const seeAllEmployees = require("../library/allEmployees");
-//updateRoleMenu
 const updatePositionOptions = require("./newpositionoptions");
 
 const questions = [
@@ -56,5 +47,4 @@ function indexOptions () {
         }
     })
 }
-//exporting the indexMenu function
 module.exports = indexOptions

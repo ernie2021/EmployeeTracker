@@ -1,6 +1,4 @@
-//This will call the database connection//
 const db = require("../config/connection");
-//table for console//
 const tableConsole = require('console.table');
 
 function allEmployees() {

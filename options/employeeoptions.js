@@ -1,6 +1,4 @@
-//inquirer
 const inquirer = require("inquirer");
-//AddADepartment
 const addEmployee = require("../library/employee");
 
 const liveSections = [];
@@ -44,31 +42,25 @@ const questions = [
   ]
 
   function EmployeeOptions() {
-    //Calling database connection
     const db = require("../config/connection");
-    //pre-written sql statements
     const sql = "SELECT * FROM sections";
     const sql2 = "SELECT * FROM positions";
-    //using mysql2 to query the database specified in ../config/connections.js
     db.query(sql, (err, results) => {
       if (err) {
         console.log(err);
         return;
       }
-      //itterating through and storing each entry in result
       for (const key in results) {
         const element = results[key];
         liveSections.push(element.section_name)
         liveSectionsID[element.section_name] = element.id
       }
     });
-    //using mysql2 to query the database specified in ../config/connections.js
     db.query(sql2, (err, results) => {
       if (err) {
         console.log(err);
         return;
       }
-      //itterating through and storing each entry in result
       for (const key in results) {
         const element = results[key];
         livePositions.push(element.position_name)
@@ -94,5 +86,4 @@ const questions = [
       });
     });
   }
-  //exporting the addEmployeeMenu function
   module.exports = EmployeeOptions;
