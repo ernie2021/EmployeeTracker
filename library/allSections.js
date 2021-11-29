@@ -1,7 +1,7 @@
 const db = require("../config/connection");
-const cTable = require('console.table');
+const tableConsole = require('console.table');
 function viewAllSections () {
-    const indexMenu = require("../options/index");
+    const optionsIndex = require("../options/index");
     const sql = "SELECT * FROM sections";
     db.query(sql, (err, results) => {
         if (err) {

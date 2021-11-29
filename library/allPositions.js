@@ -1,7 +1,7 @@
 const db = require("../config/connection");
-const cTable = require('console.table');
+const tableConsole = require('console.table');
 function viewAllRoles () {
-    const indexMenu = require("../options/index");
+    const optionsIndex = require("../options/index");
     const sql = "SELECT position.id, position_name, position_salary, section_name FROM positions, sections WHERE position.id = section.id";
     db.query(sql, (err, results) => {
         if (err) {
@@ -13,3 +13,4 @@ function viewAllRoles () {
     })
 };
 module.exports = viewAllRoles;
+

@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const addADepartment = require("../library/section");
+const addSections = require("../library/section");
 
 const questions = [
     {
