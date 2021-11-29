@@ -1,6 +1,7 @@
-const { query } = require("./config/connection");
-const db = require("./config/connection")
-const indexOption = require("./options/index");
+// const { query } = require("./config/connection");
+// const db = require("./config/connection")
+// const indexOption = require("/options");
+const inquirer = require('inquirer')
 
 
 const questions = [
@@ -12,8 +13,8 @@ const questions = [
     }
 ];
 
-function indexOptions () {
     inquirer.prompt(questions).then((data) => {
+        console.log(data);
         switch (data.indexChoice) {
             case "View All Sections":
                 allSections();
@@ -42,12 +43,7 @@ function indexOptions () {
                 break;
         }
     })
-}
 
-function init () {
-    indexOption()
-}
 
-init();
 
-module.exports = indexOptions
+module.exports = {}
