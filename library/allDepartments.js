@@ -9,7 +9,7 @@ function viewAllDepartments () {
             return;
         };
         console.table(results)
-
+       console.log("random")
         indexMenu();
     })
 };
