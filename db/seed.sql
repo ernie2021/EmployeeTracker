@@ -1,15 +1,15 @@
-INSERT INTO sections (section_name)
-VALUES ("eComm"),
-       ("Media"),
+INSERT INTO departments (department_name)
+VALUES ("Recieving"),
+       ("Data Entry"),
        ("Production"),
-       ("Accounting");
-INSERT INTO postions (position_name, position_salary, position_department_id)
-VALUES ("eComm", 30000, 1),
-       ("Media", 34000, 2),
-       ("Production", 37000, 3),
-       ("Accounting", 37000, 4);
-INSERT INTO employees (employee_first_name, employee_last_name, employee_position_id, employee_section_id, employee_manager)
-VALUES ("Juan", "the Productionist", 1,1, "Leon"),
-       ("Melly", "The Accountant", 2,2, "Albert"),
-       ("Andrew", "Ernie", 3,3, "Albert"),
-       ("Ernie", "Garcia", 4,4, "Leon");
+       ("Inventory");
+INSERT INTO roles (role_name, role_salary, role_department_id)
+VALUES ("Reciever", 30000, 1),
+       ("Data Entry Clerk", 34000, 2),
+       ("Assembler", 37000, 3),
+       ("Inventory Specialist", 37000, 4);
+INSERT INTO employees (employee_first_name, employee_last_name, employee_role_id, employee_department_id, employee_manager)
+VALUES ("Steve", "the Reciever", 1,1, "Sam Iam"),
+       ("Linda", "The Data Entry Clerk", 2,2, "David Blain"),
+       ("Peter", "Piper", 3,3, "David Blain"),
+       ("Ernesto", "Garcia", 4,4, "Sam Iam");

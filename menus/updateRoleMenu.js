@@ -1,12 +1,12 @@
 const inquirer = require("inquirer");
 const db = require("../config/connection");
-const updateEmployeePosition = require("../library/employeeposition");
-async function updateEmployeePostionOptions() {
-  const livePositions = [];
-  const livePositionsID = {};
-  const allEmployeeInfo = {};
+const updateEmployeeRole = require("../library/updateEmployeeRole");
+async function updateEmployeeRoleMenu() {
+  const currentRoles = [];
+  const currentRoleIds = {};
+  const allEmployeeData = {};
   const allEmployeeNames = [];
-  const sql = "SELECT * FROM position";
+  const sql = "SELECT * FROM roles";
   const sql2 = "SELECT * FROM employees";
   db.query(sql, (err, results) => {
     if (err) {
@@ -15,8 +15,8 @@ async function updateEmployeePostionOptions() {
     }
     for (const key in results) {
       const element = results[key];
-      livePositions.push(element.position_name);
-      livePositionsIds[element.position_name] = element.id;
+      currentRoles.push(element.role_name);
+      currentRoleIds[element.role_name] = element.id;
     }
   });
   db.query(sql2, (err, results) => {
@@ -51,28 +51,28 @@ async function updateEmployeePostionOptions() {
       type: "list",
       name: "newRole",
       message: "What is the new role?",
-      choices: livePositions,
+      choices: currentRoles,
     },
   ];
 
     inquirer.prompt(questions).then((data) => {
-    const employeeNewPosition =[];
-    for (const key in livePositionsID) {
-      const element = livePositionsID[key];
-      if (key == data.newPosition) {
-        employeeNewPosition.push(element)
+    const employeeWithNewRole =[];
+    for (const key in currentRoleIds) {
+      const element = currentRoleIds[key];
+      if (key == data.newRole) {
+        employeeWithNewRole.push(element)
       }
     }
-    for (const key in allEmployeeInfo) {
-      const element = allEmployeeInfo[key];
+    for (const key in allEmployeeData) {
+      const element = allEmployeeData[key];
       if (key == data.employee) {
-        employeeNewPosition.push(element.id)
+        employeeWithNewRole.push(element.id)
       }
     }
   
-    updateEmployeePosition(employeeNewPosition)
+    updateEmployeeRole(employeeWithNewRole)
   });
   
 }, 100)
 }
-module.exports = updateEmployeePostionOptions;
+module.exports = updateEmployeeRoleMenu;

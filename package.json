@@ -1,20 +1,20 @@
 {
   "name": "EmployeeTracker",
   "version": "1.0.0",
-  "description": "Description\r The problem of managing many employees across different departments and roles can be too much to think about.\r I built this employee tracker to help maintain information about employees across many fields of work.\r Table of Contents\r Installation\r Usage\r Credits\r License\r Installation\r To install this project, clone the repository. Next, '$ npm install' the packages and then run '$ node server.js' in the main directory.",
+  "description": "",
   "main": "server.js",
   "dependencies": {
     "console.table": "^0.10.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "inquirer": "^8.2.0",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.0-alpha.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "^0.4.4"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
